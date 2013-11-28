@@ -1,0 +1,8 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block navbar %}{% if app.user is not empty %}{% include "CodeLoversBackendBundle::navbar.html.twig" %}{% endif %}{% endblock navbar %}
+
+{% block content %}
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+{% endblock content %}

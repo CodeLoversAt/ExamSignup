@@ -1,0 +1,31 @@
+{% extends "CodeLoversUserBundle:Security:layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}{{ 'security.login.title'|trans }}{% endblock title %}
+
+{% block fos_user_content %}
+{% spaceless %}
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        {% if error %}
+            <div class="alert alert-danger fade in">
+                <a class="close" data-dismiss="alert"><i class="icon-close-sign" aria-hidden="true"></i></a>
+                <p>{{ error|trans }}</p>
+            </div>
+        {% endif %}
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+        <h2 class="form-signin-heading">{{ block('title') }}</h2>
+        <input type="email" id="username" name="_username" required="required" class="form-control" placeholder="{{ 'security.login.email'|trans }}" autofocus="autofocus" />
+        <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="{{ 'security.login.password'|trans }}" autocomplete="false" />
+        <label class="checkbox" for="remember_me">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" /> {{ 'security.login.remember_me'|trans }}
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+
+        <hr />
+        <a class="pull-right" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans }}</a>
+    </form>
+{% endspaceless %}
+{% endblock fos_user_content %}

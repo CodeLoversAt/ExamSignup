@@ -1,0 +1,19 @@
+{% spaceless %}
+    <div class="form-group">
+        {{ form_label(date.location, null, {'label_attr': {'class': 'col-md-2'}}) }}
+        <div class="col-md-4">
+            {{ form_widget(date.location) }}
+            {{ form_errors(date.location) }}
+        </div>
+
+        {{ form_label(date.date, null, {'label_attr': {'class': 'col-md-2'}}) }}
+        <div class="col-md-2">
+            {{ form_widget(date.date.date) }}
+            {{ form_errors(date.date.date) }}
+        </div>
+        <div class="col-md-2">
+            {{ form_widget(date.date.time) }}
+            {{ form_errors(date.date.time) }}
+        </div>
+    </div>
+{% endspaceless %}

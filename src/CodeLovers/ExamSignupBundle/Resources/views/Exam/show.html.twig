@@ -1,0 +1,36 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>{{ exam }}</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>{{ 'examDate.location'|trans|desc('Location') }}</th>
+                    <th>{{ 'examDate.date'|trans|desc('Date') }}</th>
+                    <th>{{ 'examDate.participant'|trans|desc('Participant') }}</th>
+                    <th>{{ 'examDate.actions'|trans|desc('Actions') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for date in exam.dates %}
+                <tr>
+                    <td>{{ date.location }}</td>
+                    <td>{{ date.date|date('D d.m.Y H:i') }}</td>
+                    <td>{{ date.registration|default('') }}</td>
+                    <td>
+                        {% if date.registration is empty %}
+                            <a class="btn btn-primary btn-sm pull-right" href="{{ path('_examdate_signup', {'id': date.id}) }}">{{ 'examDate.signup'|trans|desc('Sign up') }}</a>
+                        {% elseif is_granted('EDIT', date.registration) %}
+                            <a class="btn btn-danger pull-right" href="{{ path('_registration_delete', {'id': date.registration.id}) }}">{{ 'examDate.remove'|trans|desc('Remove') }}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

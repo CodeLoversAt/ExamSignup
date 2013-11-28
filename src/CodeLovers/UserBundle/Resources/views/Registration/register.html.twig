@@ -1,0 +1,7 @@
+{% extends "CodeLoversUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'layout.register'|trans({}, 'FOSUserBundle') }}{% endblock %}
+
+{% block fos_user_content %}
+    {% include "CodeLoversUserBundle:Registration:register_content.html.twig" %}
+{% endblock fos_user_content %}

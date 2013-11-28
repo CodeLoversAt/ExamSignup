@@ -1,0 +1,74 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block content %}
+    {% spaceless %}
+        <div class="page-header">
+            <h1>
+                {% if form.vars.value.id is empty %}
+                    {{ 'exam.create'|trans|desc('Create exam') }}
+                {% else %}
+                    {{ 'exam.edit'|trans|desc('Edit exam') }}
+                {% endif %}
+            </h1>
+        </div>
+
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.name, null, {'label_attr': {'class': 'col-md-2'}}) }}
+
+                <div class="col-md-10">
+                    {{ form_widget(form.name) }}
+                    {{ form_errors(form.name) }}
+                </div>
+            </div>
+
+            <ul class="list-unstyled" id="exam-dates"
+                data-prototype="{% filter escape %}{% include "CodeLoversExamSignupBundle:Form:examDate.html.twig" with {'date': form.dates.vars.prototype} %}{% endfilter %}">
+                {% for date in form.dates %}
+                    {% include "CodeLoversExamSignupBundle:Form:examDate.html.twig" %}
+                {% endfor %}
+            </ul>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <button id="add-date" data-target="#exam-dates" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <button type="submit" class="btn btn-primary btn-lg">{{ 'form.save'|trans|desc('Save') }}</button>
+                </div>
+            </div>
+
+        {# invisible rest #}
+        <div class="hide">
+            {{ form_rest(form) }}
+        </div>
+        {{ form_end(form) }}
+    {% endspaceless %}
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function() {
+            $('#add-date').click(function(event) {
+                event.preventDefault();
+                var button = $(this),
+                    list = $(button.data('target'));
+
+                if (!list.length) {
+                    return;
+                }
+
+                var prototype = list.data('prototype'),
+                    index = list.find('> li').length;
+
+                console.log(prototype);
+
+                $('<li>' + prototype.replace(/__name__/g, index) + '</li>').appendTo(list);
+            });
+        })
+    }).call(window, jQuery);
+</script>
+{% endblock scripts %}

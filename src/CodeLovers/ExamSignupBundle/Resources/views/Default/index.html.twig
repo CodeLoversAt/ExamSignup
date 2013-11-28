@@ -1,0 +1,14 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="page-header clearfix">
+        <a class="pull-right btn btn-primary" href="{{ path('_exam_edit') }}">{{ 'exam.create'|trans|desc('Create exam') }}</a>
+        <h1 class="pull-left">{{ 'index.title'|trans|desc('Exams') }}</h1>
+    </div>
+
+    <ul>
+        {% for exam in exams %}
+            <li><a href="{{ path('_exam_show', {'id': exam.id}) }}">{{ exam }}</a> {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-default" href="{{ path('_exam_edit', {'id': exam.id}) }}">{{ 'exam.edit'|trans|desc('Edit exam') }}</a>{% endif %}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

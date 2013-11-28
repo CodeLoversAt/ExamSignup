@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-11-28T15:03:44Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6a7d1a3a17c4e8ae6712cb60d46db1edf0aa2667" resname="Please login">
+        <source>Please login</source>
+        <target state="new">Please login</target>
+        <jms:reference-file line="11">views/Security/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6093082afb83a67705428746622fea7eaa8fc4d8" resname="exam.create">
+        <source>Create exam</source>
+        <target>Create exam</target>
+        <jms:reference-file line="8">views/Exam/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cc08adb6044d6b01a2ef848bb7bafa38c7fde073" resname="exam.edit">
+        <source>Edit exam</source>
+        <target>Edit exam</target>
+        <jms:reference-file line="10">views/Exam/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61354fbc3d8a4156e15cec1a67479396a1f6c5e6" resname="exam.label">
+        <source>exam.label</source>
+        <target>exam.label</target>
+        <jms:reference-file line="39">ExamSignupBundle/Form/ExamType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b136f6880ed5f41db0c530448e3d7616d552ee93" resname="exam.signedUp.already">
+        <source>You're already registered for this appointment</source>
+        <target>You're already registered for this appointment</target>
+        <jms:reference-file line="92">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0b05576531b655a544204cbe24250e4b083e926" resname="exam.signedUp.occupied">
+        <source>Sorry, but this appointment is already occupied</source>
+        <target>Sorry, but this appointment is already occupied</target>
+        <jms:reference-file line="96">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="648bd84cdf94d2afebbfd551ca0eb2e4c63678ac" resname="exam.signedUp.success">
+        <source>Your registration has been saved</source>
+        <target>Your registration has been saved</target>
+        <jms:reference-file line="114">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="535ecd2c797efed01a6977e4aa530e083a11cd8f" resname="exam.signedUp.updated">
+        <source>You registration has been changed to the selected appointment</source>
+        <target>You registration has been changed to the selected appointment</target>
+        <jms:reference-file line="111">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="982cf18f30db6f2e3dfb09464e9a52d054758cc7" resname="examDate.actions">
+        <source>Actions</source>
+        <target>Actions</target>
+        <jms:reference-file line="15">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0f0c89b6bc1bac8ea6f2d4d950d71ce0a3e8497a" resname="examDate.date">
+        <source>examDate.date</source>
+        <target>Date/Time</target>
+        <jms:reference-file line="42">ExamSignupBundle/Form/ExamDateType.php</jms:reference-file>
+        <jms:reference-file line="13">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73940325a68047667bdb9c4e4c9dbe35084e23fd" resname="examDate.location">
+        <source>examDate.location</source>
+        <target>Location</target>
+        <jms:reference-file line="39">ExamSignupBundle/Form/ExamDateType.php</jms:reference-file>
+        <jms:reference-file line="12">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce45e86cfd00b8dc7e9d5c439f03eff0f323bf43" resname="examDate.participant">
+        <source>Participant</source>
+        <target>Participant</target>
+        <jms:reference-file line="14">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="162f2be8a9d4f32f32aa9b98ffa2984bfe014aba" resname="examDate.remove">
+        <source>Remove</source>
+        <target>Remove</target>
+        <jms:reference-file line="28">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="06bf61eefb3d29b4e442823bf1309fceba6ceed8" resname="examDate.signup">
+        <source>Sign up</source>
+        <target>Sign up</target>
+        <jms:reference-file line="26">views/Exam/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d384fb8ef3ca9318f0f9d983868842a211770f8" resname="form.password">
+        <source>form.password</source>
+        <target state="new">form.password</target>
+        <jms:reference-file line="37">Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="30de94712c8550862006ed6a664870c398c9482d" resname="form.password_confirmation">
+        <source>form.password_confirmation</source>
+        <target state="new">form.password_confirmation</target>
+        <jms:reference-file line="38">Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b17e663256279c22d4d81c0f442d03b726ddbcaa" resname="form.save">
+        <source>Save</source>
+        <target>Save</target>
+        <jms:reference-file line="39">views/Exam/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a0bfae81e70d813b57d3620e2cc15eaed7abf81" resname="index.title">
+        <source>Exams</source>
+        <target>Exams</target>
+        <jms:reference-file line="6">views/Default/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="360d5f783c46f5e90f1b24010cb6bf03626ec35b" resname="layout.login">
+        <source>Sign in</source>
+        <target state="new">Sign in</target>
+        <jms:reference-file line="44">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="80a0b95340202d0b8c88ba8bd10b315ecdd1feba" resname="layout.logout">
+        <source>Logout</source>
+        <target state="new">Logout</target>
+        <jms:reference-file line="49">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b4fd3339c049e05d15ffc267bea497ff796fcdaa" resname="layout.signedInAs">
+        <source>Signed in as %name%</source>
+        <target state="new">Signed in as %name%</target>
+        <jms:reference-file line="49">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="05ef441a493b8146ae03435bf2bb5966b4b39a33" resname="layout.signup">
+        <source>Sign up</source>
+        <target state="new">Sign up</target>
+        <jms:reference-file line="45">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1a6f490599ed685fe0a9fb8ba76bc9c46f6ecb2c" resname="registration.deleted">
+        <source>You have been unregistiered from the selected appointment</source>
+        <target>You have been unregistiered from the selected appointment</target>
+        <jms:reference-file line="149">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

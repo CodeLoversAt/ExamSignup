@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="page-header clearfix">
-        <a class="pull-right btn btn-primary" href="{{ path('_exam_edit') }}">{{ 'exam.create'|trans|desc('Create exam') }}</a>
+        {% if is_granted('ROLE_ADMIN') %}<a class="pull-right btn btn-primary" href="{{ path('_exam_edit') }}">{{ 'exam.create'|trans|desc('Create exam') }}</a>{% endif %}
         <h1 class="pull-left">{{ 'index.title'|trans|desc('Exams') }}</h1>
     </div>
 

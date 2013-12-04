@@ -110,25 +110,13 @@ class User extends BaseUser
         return sprintf("%s %s", $this->firstName, $this->lastName);
     }
 
-    /**
-     * @param string $email
-     * @return User
-     */
-    public function setEmail($email)
+    public function setUsername($username)
     {
-        $this->setUsername($email);
-
-        return parent::setEmail($email);
+        return parent::setUsername(ucfirst($username));
     }
 
-    /**
-     * @param string $emailCanonical
-     * @return User
-     */
-    public function setEmailCanonical($emailCanonical)
+    public function setUsernameCanonical($usernameCanonical)
     {
-        $this->setUsernameCanonical($emailCanonical);
-
-        return parent::setEmailCanonical($emailCanonical);
+        return parent::setUsernameCanonical(ucfirst($usernameCanonical));
     }
 }

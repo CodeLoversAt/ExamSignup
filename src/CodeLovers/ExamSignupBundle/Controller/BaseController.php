@@ -173,4 +173,45 @@ abstract class BaseController extends Controller
         $session = $this->getRequest()->getSession();
         $session->getFlashBag()->add($type, $message);
     }
+
+    /**
+     * @param string $fileName
+     * @return string
+     * @throws \RuntimeException
+     */
+    protected function createSaveFileName($fileName)
+    {
+        if (!$fileName || !is_string($fileName)) {
+            throw new \RuntimeException('filename needs to be a string');
+        }
+
+        return preg_replace('#[^a-zA-Z0-9_.]+#', '_', $fileName);
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return User
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws \Symfony\Component\Security\Core\Exception\AccessDeniedException
+     */
+    protected function loadUser($id)
+    {
+        /** @var User $user */
+        $user = $this->getUserRepository()->find($id);
+
+        if (!$user) {
+            throw $this->createNotFoundException();
+        }
+
+        // check permission
+        /** @var User $currentUser */
+        $currentUser = $this->getUser();
+
+        if ($user->getId() !== $currentUser->getId() && false === $this->get('security.context')->isGranted('ROLE_SUPER_ADMIN')) {
+            throw new AccessDeniedException();
+        }
+
+        return $user;
+    }
 }

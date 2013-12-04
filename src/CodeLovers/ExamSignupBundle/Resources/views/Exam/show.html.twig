@@ -1,8 +1,9 @@
 {% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
 
 {% block content %}
-    <div class="page-header">
-        <h1>{{ exam }}</h1>
+    <div class="page-header clearfix">
+        <h1 class="pull-left">{{ exam }}</h1>
+        <a href="{{ path('_admin_download', {'id': exam.id}) }}" class="btn btn-info pull-right"><i class="fa fa-download"></i> {{ 'exam.download'|trans|desc('Download') }}</a>
     </div>
 
     <div class="table-responsive">

@@ -21,7 +21,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "jms/security-extra-bundle": "1.5.*@dev",
-        "jms/translation-bundle": "1.1.*@dev"
+        "jms/translation-bundle": "1.1.*@dev",
+        "phpoffice/phpexcel": "dev-develop"
     },
     "scripts": {
         "post-install-cmd": [

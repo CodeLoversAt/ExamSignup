@@ -2,13 +2,33 @@
 
 {% block content %}
     <div class="page-header clearfix">
-        {% if is_granted('ROLE_ADMIN') %}<a class="pull-right btn btn-primary" href="{{ path('_exam_edit') }}">{{ 'exam.create'|trans|desc('Create exam') }}</a>{% endif %}
+        {% if is_granted('ROLE_ADMIN') %}<a class="pull-right btn btn-success" href="{{ path('_exam_edit') }}"><i class="fa fa-plus"></i> {{ 'exam.create'|trans|desc('Create exam') }}</a>{% endif %}
         <h1 class="pull-left">{{ 'index.title'|trans|desc('Exams') }}</h1>
     </div>
 
-    <ul>
-        {% for exam in exams %}
-            <li><a href="{{ path('_exam_show', {'id': exam.id}) }}">{{ exam }}</a> {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-default" href="{{ path('_exam_edit', {'id': exam.id}) }}">{{ 'exam.edit'|trans|desc('Edit exam') }}</a>{% endif %}</li>
-        {% endfor %}
-    </ul>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>{{ 'exam.name'|trans|desc('Exam') }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for exam in exams %}
+                <tr>
+                    <td><a href="{{ path('_exam_show', {'id': exam.id}) }}">{{ exam }}</a></td>
+                    <td>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="btn-group pull-right">
+                                <a class="btn btn-default" href="{{ path('_exam_edit', {'id': exam.id}) }}"><i class="fa fa-edit"></i> {{ 'exam.edit'|trans|desc('Edit exam') }}</a>
+                                <a href="{{ path('_admin_download', {'id': exam.id}) }}" class="btn btn-info pull-right"><i class="fa fa-download"></i> {{ 'exam.download'|trans|desc('Download') }}</a>
+                            </div>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock content %}

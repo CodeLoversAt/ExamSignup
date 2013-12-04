@@ -11,6 +11,15 @@
             </div>
         </div>
 
+        <div class="form-group">
+            {{ form_label(form.username, null, {'label_attr': {'class': 'col-md-3'}}) }}
+
+            <div class="col-md-9">
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+            </div>
+        </div>
+
         {% for widget in form.plainPassword %}
         <div class="form-group">
             {{ form_label(widget, null, {'label_attr': {'class': 'col-md-3'}}) }}

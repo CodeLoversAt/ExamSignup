@@ -7,6 +7,8 @@
     <parameters>
         <parameter key="aclHandler.class">CodeLovers\ExamSignupBundle\Acl\AclHandler</parameter>
         <parameter key="aclCleaner.class">CodeLovers\ExamSignupBundle\Acl\AclCleaner</parameter>
+        <parameter key="code_lovers.export.excel.class">CodeLovers\ExamSignupBundle\Export\ExcelExport</parameter>
+        <parameter key="acl.userNameChanger.class">CodeLovers\ExamSignupBundle\Acl\UsernameChanger</parameter>
     </parameters>
 
     <services>
@@ -22,6 +24,15 @@
             <argument type="service" id="monolog.logger.acl" />
             <tag name="monolog.logger" channel="acl" />
             <tag name="doctrine_mongodb.odm.event_subscriber" />
+        </service>
+
+        <service id="code_lovers.export.excel" class="%code_lovers.export.excel.class%">
+            <argument key="cacheFolder">%kernel.cache_dir%/excel</argument>
+            <argument type="service" id="translator" />
+        </service>
+
+        <service id="acl.userNameChanger" class="%acl.userNameChanger.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
     </services>
 </container>

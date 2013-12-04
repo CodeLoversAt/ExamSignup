@@ -9,6 +9,7 @@
                 <tr>
                     <th>{{ 'users.lastName'|trans|desc('Last name') }}</th>
                     <th>{{ 'users.firstName'|trans|desc('First name') }}</th>
+                    <th>{{ 'users.username'|trans|desc('Username') }}</th>
                     <th>{{ 'users.email'|trans|desc('E-Mail Address') }}</th>
                     <th></th>
                 </tr>
@@ -18,11 +19,22 @@
                 <tr>
                     <td>{{ user.lastName }}</td>
                     <td>{{ user.firstName }}</td>
+                    <td>
+                        {{ user.username }}
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                            <a class="btn btn-info pull-right btn-xs" href="{{ path('_change_username', {'user_id': user.id}) }}"><i class="fa fa-edit"></i> </a>
+                        {% endif %}
+                    </td>
                     <td>{{ user.email }}</td>
                     <td>
-                        {% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
-                            <a class="btn btn-sm btn-primary pull-right" href="{{ path('_index', {'_switch_user': user.email}) }}">{{ 'user.switch'|trans|desc('Switch to user') }}</a>
-                        {% endif %}
+                        <div class="btn-group pull-right">
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                <a class="btn btn-sm btn-danger" href="{{ path('_delete_user', {'id': user.id}) }}"><i class="fa fa-times"></i> {{ 'user.delete'|trans|desc('Delete') }}</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
+                                <a class="btn btn-sm btn-primary" href="{{ path('_index', {'_switch_user': user.email}) }}"><i class="fa fa-user"></i> {{ 'user.switch'|trans|desc('Switch to user') }}</a>
+                            {% endif %}
+                        </div>
                     </td>
                 </tr>
             {% endfor %}

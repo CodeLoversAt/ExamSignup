@@ -1,0 +1,28 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block content %}
+    {% spaceless %}
+        <div class="page-header">
+            <h1>
+                {{ 'user.changeUsername.title'|trans({'%user%': user ~ ' (' ~ user.email ~ ')'})|desc('Change username of "%user%"') }}
+            </h1>
+        </div>
+
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.username, null, {'label_attr': {'class': 'col-md-2'}}) }}
+
+            <div class="col-md-10">
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <button type="submit" class="btn btn-primary btn-lg">{{ 'form.save'|trans|desc('Save') }}</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    {% endspaceless %}
+{% endblock content %}

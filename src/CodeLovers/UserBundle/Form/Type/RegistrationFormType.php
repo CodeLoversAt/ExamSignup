@@ -19,34 +19,42 @@ class RegistrationFormType extends BaseType
     {
         $builder
             ->add('email', 'email', array(
-                'label' => 'form.email',
+                'label'              => 'form.email',
                 'translation_domain' => 'FOSUserBundle',
-                'attr'  =>  array(
-                    'autocomplete'  =>  'false',
-                    'autofocus'     =>  'autofocus'
+                'attr'               => array(
+                    'autocomplete' => 'false',
+                    'autofocus'    => 'autofocus'
                 )
             ))
             ->add('plainPassword', 'repeated', array(
-                'type' => 'password',
-                'options' => array(
+                'type'            => 'password',
+                'options'         => array(
                     'translation_domain' => 'FOSUserBundle',
-                    'attr'  =>  array(
-                        'autocomplete'  =>  'false',
+                    'attr'               => array(
+                        'autocomplete' => 'false',
                     )
                 ),
-                'first_options' => array('label' => 'form.password'),
-                'second_options' => array('label' => 'form.password_confirmation'),
+                'first_options'   => array('label' => 'form.password'),
+                'second_options'  => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
             ->add('firstName', 'text', array(
-                'label' =>  'form.firstName',
-                'translation_domain'    =>  'FOSUserBundle'
+                'label'              => 'form.firstName',
+                'translation_domain' => 'FOSUserBundle'
             ))
             ->add('lastName', 'text', array(
-                'label' =>  'form.lastName',
-                'translation_domain'    =>  'FOSUserBundle'
+                'label'              => 'form.lastName',
+                'translation_domain' => 'FOSUserBundle'
+            ))
+            ->add('username', 'text', array(
+                'label'              => 'form.username',
+                'translation_domain' => 'FOSUserBundle',
+                'attr'               => array(
+                    'pattern' => '[Ss]{1}[0-9]{10}'
+                )
             ))
         ;
+
     }
 
     public function getName()

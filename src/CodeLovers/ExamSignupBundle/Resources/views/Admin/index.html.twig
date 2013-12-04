@@ -1,0 +1,32 @@
+{% extends "CodeLoversExamSignupBundle::layout.html.twig" %}
+
+{% block content %}
+    {% spaceless %}
+        <h1 class="page-title">{{ 'users.title'|trans|desc('Users') }}</h1>
+
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>{{ 'users.lastName'|trans|desc('Last name') }}</th>
+                    <th>{{ 'users.firstName'|trans|desc('First name') }}</th>
+                    <th>{{ 'users.email'|trans|desc('E-Mail Address') }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        {% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
+                            <a class="btn btn-sm btn-primary pull-right" href="{{ path('_index', {'_switch_user': user.email}) }}">{{ 'user.switch'|trans|desc('Switch to user') }}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endspaceless %}
+{% endblock content %}

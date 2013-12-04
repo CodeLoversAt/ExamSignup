@@ -17,4 +17,15 @@ class DefaultController extends BaseController
             'exams' =>  $this->getExamRepository()->findAll(),
         );
     }
+
+    /**
+     * will redirect to the admin area
+     * handy for switching back from impersonating a user
+     *
+     * @Route("/switch_back", name="_switch_back")
+     */
+    public function switchBackAction()
+    {
+        return $this->redirect($this->generateUrl('_admin_index'));
+    }
 }

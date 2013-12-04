@@ -8,6 +8,11 @@ code_lovers_exam_signup_exams:
     type:     annotation
     prefix:   /exams
 
+code_lovers_exam_signup_admin:
+    resource: "@CodeLoversExamSignupBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

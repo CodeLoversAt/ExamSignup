@@ -37,6 +37,15 @@ abstract class BaseController extends Controller
 
     /**
      *
+     * @return UserRepository
+     */
+    protected function getUserRepository()
+    {
+        return $this->getEntityManager()->getRepository('CodeLoversUserBundle:User');
+    }
+
+    /**
+     *
      * @return ExamRepository
      */
     protected function getExamRepository()

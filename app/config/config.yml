@@ -96,3 +96,9 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - name: twig.extension
+
+# gravatar
+ornicar_gravatar:
+    rating: g
+    size: 25
+    default: mm

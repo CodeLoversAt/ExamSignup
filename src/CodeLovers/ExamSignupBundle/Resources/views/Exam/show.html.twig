@@ -21,7 +21,12 @@
                 <tr>
                     <td>{{ date.location }}</td>
                     <td>{{ date.date|date('D d.m.Y H:i') }}</td>
-                    <td>{{ date.registration|default('') }}</td>
+                    <td>
+                        {% if date.registration is not empty %}
+                            <img src="{{ gravatar(date.registration.user.email) }}" class="img-circle" alt="gravatar" />
+                            {{ date.registration }}
+                        {% endif %}
+                    </td>
                     <td>
                         {% if date.registration is empty %}
                             <a class="btn btn-primary btn-sm pull-right" href="{{ path('_examdate_signup', {'id': date.id}) }}">{{ 'examDate.signup'|trans|desc('Sign up') }}</a>

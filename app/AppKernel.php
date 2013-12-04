@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new CodeLovers\ExamSignupBundle\CodeLoversExamSignupBundle(),
             new CodeLovers\UserBundle\CodeLoversUserBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
+            new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

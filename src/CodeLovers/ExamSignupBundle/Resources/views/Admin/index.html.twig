@@ -7,6 +7,7 @@
         <table class="table table-bordered table-striped table-condensed">
             <thead>
                 <tr>
+                    <th></th>
                     <th>{{ 'users.lastName'|trans|desc('Last name') }}</th>
                     <th>{{ 'users.firstName'|trans|desc('First name') }}</th>
                     <th>{{ 'users.username'|trans|desc('Username') }}</th>
@@ -17,6 +18,7 @@
             <tbody>
             {% for user in users %}
                 <tr>
+                    <td><img src="{{ gravatar(user.email) }}" class="img-thumbnail" alt="gravatar" /></td>
                     <td>{{ user.lastName }}</td>
                     <td>{{ user.firstName }}</td>
                     <td>

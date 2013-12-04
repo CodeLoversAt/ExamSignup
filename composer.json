@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "jms/security-extra-bundle": "1.5.*@dev",
         "jms/translation-bundle": "1.1.*@dev",
-        "phpoffice/phpexcel": "dev-develop"
+        "phpoffice/phpexcel": "dev-develop",
+        "ornicar/gravatar-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

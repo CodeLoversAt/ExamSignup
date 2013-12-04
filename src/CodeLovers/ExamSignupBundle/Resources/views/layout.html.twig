@@ -53,7 +53,7 @@
                     {% endif %}
                 </ul>
                 {% if is_granted('ROLE_USER') %}
-                    <p class="navbar-text navbar-right">{{ 'layout.signedInAs'|trans({'%name%': app.user})|desc('Signed in as %name%') }} - <a href="{{ path('fos_user_security_logout') }}" class="navbar-link">{{ 'layout.logout'|trans|desc('Logout') }}</a>
+                    <p class="navbar-text navbar-right">{{ 'layout.signedInAs'|trans({'%name%': app.user})|desc('Signed in as %name%') }} <img src="{{ gravatar(app.user.email) }}" class="img-circle" /> - <a href="{{ path('fos_user_security_logout') }}" class="navbar-link">{{ 'layout.logout'|trans|desc('Logout') }}</a>
                 {% endif %}
             </div><!--/.nav-collapse -->
         </div>

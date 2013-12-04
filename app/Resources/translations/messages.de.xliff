@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-11-28T15:06:50Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+  <file date="2013-12-04T11:37:31Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -100,6 +100,11 @@
         <target>Prüfungen</target>
         <jms:reference-file line="6">views/Default/index.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="dc527dc209f27f040c3667334dcabc621df124bf" resname="layout.admin">
+        <source>Administration</source>
+        <target>Administration</target>
+        <jms:reference-file line="48">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="360d5f783c46f5e90f1b24010cb6bf03626ec35b" resname="layout.login">
         <source>Sign in</source>
         <target>Einloggen</target>
@@ -108,22 +113,52 @@
       <trans-unit id="80a0b95340202d0b8c88ba8bd10b315ecdd1feba" resname="layout.logout">
         <source>Logout</source>
         <target>Abmelden</target>
-        <jms:reference-file line="49">Resources/views/layout.html.twig</jms:reference-file>
+        <jms:reference-file line="55">Resources/views/layout.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="b4fd3339c049e05d15ffc267bea497ff796fcdaa" resname="layout.signedInAs">
         <source>Signed in as %name%</source>
         <target>Angemeldet als %name%</target>
-        <jms:reference-file line="49">Resources/views/layout.html.twig</jms:reference-file>
+        <jms:reference-file line="55">Resources/views/layout.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="05ef441a493b8146ae03435bf2bb5966b4b39a33" resname="layout.signup">
         <source>Sign up</source>
         <target>Registrieren</target>
         <jms:reference-file line="45">Resources/views/layout.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="b190fb6539111ed0eb8d1081c2e2c4a6bcef3e91" resname="layout.switchBack">
+        <source>Back to your account</source>
+        <target>Zurück zum eigenen Account</target>
+        <jms:reference-file line="51">Resources/views/layout.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="1a6f490599ed685fe0a9fb8ba76bc9c46f6ecb2c" resname="registration.deleted">
         <source>You have been unregistiered from the selected appointment</source>
         <target>Du wurdest von dem gewählten Termin ausgetragen</target>
         <jms:reference-file line="149">ExamSignupBundle/Controller/ExamController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b65eb48c0242a0c7d1bab7d83786a91f6a31f06a" resname="user.switch">
+        <source>Switch to user</source>
+        <target>Account annehmen</target>
+        <jms:reference-file line="24">views/Admin/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2cb02a4c39c7129ee63501de8be1fcb6bb921592" resname="users.email">
+        <source>E-Mail Address</source>
+        <target>E-Mail-Adresse</target>
+        <jms:reference-file line="12">views/Admin/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7ef189e2734c869d99e03a5c46f175b09ab01afe" resname="users.firstName">
+        <source>First name</source>
+        <target>Vorname</target>
+        <jms:reference-file line="11">views/Admin/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a495640cdf8a2b2df8aafa07f252eb53ff309398" resname="users.lastName">
+        <source>Last name</source>
+        <target>Nachname</target>
+        <jms:reference-file line="10">views/Admin/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fceccbbb418ba272d2bd0c4bd45f758b0b4a301" resname="users.title">
+        <source>Users</source>
+        <target>Benutzer</target>
+        <jms:reference-file line="5">views/Admin/index.html.twig</jms:reference-file>
       </trans-unit>
     </body>
   </file>

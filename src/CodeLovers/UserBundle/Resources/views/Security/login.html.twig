@@ -25,7 +25,13 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
 
         <hr />
-        <a class="pull-right" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans }}</a>
+        <div class="clearfix">
+            <a class="pull-right" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans }}</a>
+        </div>
+
+        <div class="clearfix">
+            <a class="pull-right" href="{{ path('fos_user_resetting_request') }}">{{ 'layout.forgotPassword'|trans }}</a>
+        </div>
     </form>
 {% endspaceless %}
 {% endblock fos_user_content %}
